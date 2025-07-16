@@ -1,0 +1,3289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Nature Conservancy | Protecting Nature. Preserving Life.</title>
+    <meta name="description" content="Join The Nature Conservancy in creating a world where people and nature thrive together through science, conservation, and community.">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary: #007a33;
+            --secondary: #6d9e3f;
+            --accent: #ffcc00;
+            --dark: #1a3a1f;
+            --light-green: #e8f1e4;
+            --light-gray: #f5f5f5;
+            --white: #ffffff;
+            --black: #333333;
+            --transition: all 0.3s ease;
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--black);
+            background-color: var(--white);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--black);
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: var(--dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .btn-accent {
+            background-color: var(--accent);
+            color: var(--black);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-white {
+            background-color: white;
+            color: var(--primary);
+        }
+
+        /* Header */
+        #mainHeader {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            height: 50px;
+            width: auto;
+        }
+
+        #mainNav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        #mainNav ul li {
+            margin-left: 2rem;
+        }
+
+        #mainNav ul li a {
+            text-decoration: none;
+            color: var(--black);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        #mainNav ul li a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--black);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 9rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero .btn {
+            margin: 0 0.5rem;
+        }
+
+        /* Stats Section */
+        .stats {
+            background-color: var(--primary);
+            color: white;
+            padding: 3.75rem 0;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.25rem;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.125rem;
+        }
+
+        /* Mission Section */
+        .mission {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .mission-content {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .mission-text {
+            flex: 1;
+        }
+
+        .mission-image {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Blog Section */
+        .blog-section {
+            background-color: var(--light-gray);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .blog-card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-card-content {
+            padding: 1.5rem;
+        }
+
+        .blog-card-date {
+            color: var(--secondary);
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-card-title {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .blog-card-excerpt {
+            margin-bottom: 1rem;
+        }
+
+        /* Cards Layout */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-content h3 {
+            font-size: 1.375rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--light-green);
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            display: none;
+        }
+
+        .testimonial.active {
+            display: block;
+        }
+
+        .testimonial-text {
+            font-size: 1.125rem;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1rem;
+        }
+
+        .author-info h4 {
+            font-size: 1.125rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+            gap: 0.5rem;
+        }
+
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ccc;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .testimonial-dot.active {
+            background-color: var(--primary);
+        }
+
+        /* Page Header */
+        .page-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 5rem 0 2.5rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.625rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .breadcrumb {
+            font-size: 1rem;
+        }
+
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            margin: 0 0.5rem;
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .team-member {
+            text-align: center;
+        }
+
+        .team-member img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .team-member h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .team-member p {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .team-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background-color: var(--light-green);
+            color: var(--primary);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .team-social a:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 3.75rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background-color: var(--secondary);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            width: 100%;
+        }
+
+        .timeline-content {
+            width: calc(50% - 2rem);
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-right: auto;
+        }
+
+        .timeline-year {
+            position: absolute;
+            top: 0;
+            width: 80px;
+            height: 80px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-year {
+            left: 0;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item:nth-child(even) .timeline-year {
+            right: 0;
+            transform: translateX(50%);
+        }
+
+        .timeline-title {
+            font-size: 1.375rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        /* Donation Form */
+        .donation-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .donation-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .donation-option {
+            padding: 0.75rem 1.5rem;
+            background-color: rgba(255,255,255,0.2);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            flex: 1;
+            min-width: 80px;
+        }
+
+        .donation-option:hover {
+            background-color: rgba(255,255,255,0.3);
+        }
+
+        .donation-option.active {
+            background-color: var(--accent);
+            color: var(--black);
+            font-weight: 600;
+        }
+
+        /* Privacy Content */
+        .privacy-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .privacy-content h2 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin: 2rem 0 1rem;
+        }
+
+        .privacy-content p, .privacy-content ul {
+            margin-bottom: 1rem;
+        }
+
+        .privacy-content ul {
+            padding-left: 2rem;
+        }
+
+        .privacy-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Project Detail Page */
+        .project-detail {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .project-header {
+            margin-bottom: 2rem;
+        }
+
+        .project-header img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .project-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-meta-item i {
+            color: var(--primary);
+        }
+
+        .project-content h2 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin: 2rem 0 1rem;
+        }
+
+        .project-content p {
+            margin-bottom: 1rem;
+        }
+
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .project-gallery img {
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .project-gallery img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Work Tabs */
+        .work-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .work-tab {
+            padding: 0.75rem 1.5rem;
+            background-color: var(--light-gray);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+        }
+
+        .work-tab:hover {
+            background-color: var(--light-green);
+        }
+
+        .work-tab.active {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .work-tab-content {
+            display: none;
+        }
+
+        .work-tab-content.active {
+            display: block;
+        }
+
+        /* Events Calendar */
+        .events-calendar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .event-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .event-date {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .event-date .day {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .event-date .month {
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+
+        .event-content {
+            padding: 1.5rem;
+        }
+
+        .event-title {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .event-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .event-meta i {
+            margin-right: 0.25rem;
+        }
+
+        /* Volunteer Form */
+        .volunteer-form {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        /* Footer */
+        #mainFooter {
+            background-color: var(--dark);
+            color: white;
+            padding-top: 3.75rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 3.75rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.125rem;
+            margin-bottom: 1.25rem;
+            color: var(--accent);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent);
+            color: var(--black);
+        }
+
+        address {
+            font-style: normal;
+            line-height: 1.6;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 1.5rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .footer-legal ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-legal ul li a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: var(--transition);
+        }
+
+        .footer-legal ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.875rem;
+        }
+
+        /* Page-specific styles */
+        #homePage .programs {
+            background-color: var(--light-green);
+        }
+
+        #homePage .donation-cta {
+            background: linear-gradient(rgba(0,122,51,0.9), rgba(0,122,51,0.9)), url('https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        #aboutPage .team-section {
+            background-color: var(--light-green);
+        }
+
+        #aboutPage .values-section {
+            background-color: var(--light-gray);
+        }
+
+        #workPage .water-section {
+            background-color: var(--light-green);
+        }
+
+        #workPage .cities-section {
+            background-color: var(--light-gray);
+        }
+
+        #getInvolvedPage .events-section {
+            background-color: var(--light-green);
+        }
+
+        #donatePage .other-ways {
+            background-color: var(--light-green);
+        }
+
+        /* Detail Page Styles */
+        .detail-page {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .detail-header {
+            margin-bottom: 2rem;
+        }
+        
+        .detail-header img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .detail-meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            color: var(--secondary);
+        }
+        
+        .detail-content h2 {
+            font-size: 1.75rem;
+            color: var(--primary);
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light-green);
+        }
+        
+        .detail-content h3 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin: 1.5rem 0 0.75rem;
+        }
+        
+        .detail-content p {
+            margin-bottom: 1.25rem;
+            line-height: 1.7;
+        }
+        
+        .detail-content blockquote {
+            border-left: 4px solid var(--accent);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            background-color: var(--light-green);
+            font-style: italic;
+        }
+        
+        .detail-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .detail-gallery img {
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .detail-gallery img:hover {
+            transform: scale(1.02);
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .back-button:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .mission, .mission-content {
+                flex-direction: column;
+            }
+            
+            .timeline::before {
+                left: 2rem;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 5rem);
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: 5rem;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-year,
+            .timeline-item:nth-child(even) .timeline-year {
+                left: 0;
+                transform: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #mainNav {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background-color: white;
+                padding: 1.25rem;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            #mainNav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            #mainNav ul li {
+                margin: 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+            
+            .hero p {
+                font-size: 1.125rem;
+            }
+            
+            .section-title {
+                font-size: 1.875rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.25rem;
+            }
+            
+            .project-header img {
+                height: 300px;
+            }
+            
+            .detail-header img {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 6rem 0;
+            }
+            
+            .stats-container {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 3rem);
+                margin-left: 3rem !important;
+            }
+            
+            .timeline-year {
+                width: 60px;
+                height: 60px;
+                font-size: 1.25rem;
+            }
+            
+            .project-header img {
+                height: 200px;
+            }
+            
+            .detail-header img {
+                height: 200px;
+            }
+        }
+
+        /* Page container */
+        .page-container {
+            display: none;
+        }
+
+        .page-container.active {
+            display: block;
+        }
+        
+        /* Detail pages */
+        .detail-page-container {
+            display: none;
+        }
+        
+        .detail-page-container.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="mainHeader">
+        <div class="container header-container">
+            <a href="#" class="logo-link" onclick="showPage('homePage')">
+                <img src="logo.png" alt="The Nature Conservancy Logo" class="logo">
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav" aria-label="Main navigation">
+                <ul>
+                    <li><a href="#" onclick="showPage('aboutPage')">About Us</a></li>
+                    <li><a href="#" onclick="showPage('workPage')">Our Work</a></li>
+                    <li><a href="#" onclick="showPage('storiesPage')">Stories</a></li>
+                    <li><a href="#" onclick="showPage('getInvolvedPage')">Get Involved</a></li>
+                    <li><a href="#" onclick="showPage('donatePage')" class="btn btn-accent">Donate</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Page -->
+    <div id="homePage" class="page-container active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>Protecting Nature. Preserving Life.</h1>
+                <p>Join us in creating a world where people and nature thrive together through science, conservation, and community.</p>
+                <div class="hero-buttons">
+                    <a href="#" onclick="showPage('donatePage')" class="btn btn-accent">Donate Now</a>
+                    <a href="#" onclick="showPage('aboutPage')" class="btn btn-outline">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="container stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">72</div>
+                    <div class="stat-label">Countries</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100M+</div>
+                    <div class="stat-label">Acres Protected</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">400+</div>
+                    <div class="stat-label">Scientists</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1M+</div>
+                    <div class="stat-label">Members</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section class="mission section-padding">
+            <div class="container">
+                <h2 class="section-title">Our Mission</h2>
+                <p class="section-subtitle">We conserve the lands and waters on which all life depends</p>
+                
+                <div class="mission-content">
+                    <div class="mission-text">
+                        <p>Founded in 1951, The Nature Conservancy is a global conservation organization dedicated to conserving the lands and waters on which all life depends. Guided by science, we create innovative, on-the-ground solutions to our world's toughest challenges so that nature and people can thrive together.</p>
+                        <p>We're tackling climate change, conserving lands, waters and oceans at unprecedented scale, providing food and water sustainably and helping make cities more sustainable. Working in 72 countries, we use a collaborative approach that engages local communities, governments, the private sector, and other partners.</p>
+                        <a href="#" onclick="showPage('aboutPage')" class="btn">Learn More About Us</a>
+                    </div>
+                    <div class="mission-image">
+                        <img src="https://images.unsplash.com/photo-1425913397330-cf8af2ff40a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Forest conservation">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section class="section-padding blog-section">
+            <div class="container">
+                <h2 class="section-title">Latest Blog Posts</h2>
+                <p class="section-subtitle">Stay updated with our conservation news and insights</p>
+                
+                <div class="blog-grid">
+                    <div class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Forest Restoration" class="blog-card-img">
+                        <div class="blog-card-content">
+                            <div class="blog-card-date">June 15, 2023</div>
+                            <h3 class="blog-card-title">Innovative Approaches to Forest Restoration</h3>
+                            <p class="blog-card-excerpt">Discover how new techniques are helping restore degraded forests faster and more effectively than ever before.</p>
+                            <a href="#" onclick="showDetailPage('forestBlog')" class="btn btn-outline">Read More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Coral Reefs" class="blog-card-img">
+                        <div class="blog-card-content">
+                            <div class="blog-card-date">May 28, 2023</div>
+                            <h3 class="blog-card-title">The Future of Coral Reefs in a Warming World</h3>
+                            <p class="blog-card-excerpt">Scientists are discovering resilient coral species that may help reefs survive climate change impacts.</p>
+                            <a href="#" onclick="showDetailPage('coralBlog')" class="btn btn-outline">Read More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Water Conservation" class="blog-card-img">
+                        <div class="blog-card-content">
+                            <div class="blog-card-date">May 10, 2023</div>
+                            <h3 class="blog-card-title">Water Conservation Strategies for Cities</h3>
+                            <p class="blog-card-excerpt">How urban areas can implement innovative solutions to address water scarcity challenges.</p>
+                            <a href="#" onclick="showDetailPage('waterBlog')" class="btn btn-outline">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="#" onclick="showPage('storiesPage')" class="btn">View All Blog Posts</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programs Section -->
+        <section class="programs section-padding">
+            <div class="container">
+                <h2 class="section-title">Our Programs</h2>
+                <p class="section-subtitle">We address critical conservation challenges through science-based solutions</p>
+                
+                <div class="card-grid">
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1615796153287-98eacf0abb13?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Climate Change" class="card-img">
+                        <div class="card-content">
+                            <h3>Climate Change</h3>
+                            <p>Reducing emissions and helping nature adapt through natural climate solutions like forest conservation and sustainable agriculture.</p>
+                            <a href="#" onclick="showDetailPage('climateProgram')" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Land Conservation" class="card-img">
+                        <div class="card-content">
+                            <h3>Land Conservation</h3>
+                            <p>Protecting vital habitats that provide clean air, water, and homes for wildlife through innovative conservation strategies.</p>
+                            <a href="#" onclick="showDetailPage('landProgram')" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Water Protection" class="card-img">
+                        <div class="card-content">
+                            <h3>Water Protection</h3>
+                            <p>Safeguarding freshwater ecosystems and ensuring sustainable water supplies for people and nature.</p>
+                            <a href="#" onclick="showDetailPage('waterProgram')" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials section-padding">
+            <div class="container">
+                <h2 class="section-title">Voices of Conservation</h2>
+                <p class="section-subtitle">Hear from the people making a difference on the ground</p>
+                
+                <div class="testimonial-slider">
+                    <div class="testimonial active">
+                        <p class="testimonial-text">"Working with The Nature Conservancy has allowed our community to protect our ancestral lands while creating sustainable livelihoods. Their science-based approach combined with respect for local knowledge makes them invaluable partners."</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Maria Gutierrez" class="author-avatar">
+                            <div class="author-info">
+                                <h4>Maria Gutierrez</h4>
+                                <p>Community Leader, Peru</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <p class="testimonial-text">"As a scientist, I appreciate how The Nature Conservancy uses rigorous research to guide their conservation work. Our partnership has led to breakthroughs in sustainable agriculture that benefit both farmers and ecosystems."</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dr. James Wilson" class="author-avatar">
+                            <div class="author-info">
+                                <h4>Dr. James Wilson</h4>
+                                <p>Agricultural Scientist, USA</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <p class="testimonial-text">"The Nature Conservancy's work in marine conservation has helped protect our fishing grounds while ensuring sustainable catches for future generations. Their collaborative approach respects local traditions while introducing innovative solutions."</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Kaimana Nalani" class="author-avatar">
+                            <div class="author-info">
+                                <h4>Kaimana Nalani</h4>
+                                <p>Fisherman, Hawaii</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-nav">
+                        <div class="testimonial-dot active" data-slide="0"></div>
+                        <div class="testimonial-dot" data-slide="1"></div>
+                        <div class="testimonial-dot" data-slide="2"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Donation CTA Section -->
+        <section class="donation-cta section-padding">
+            <div class="container">
+                <h2>Join Us in Protecting Our Planet</h2>
+                <p>Your support helps us take on the greatest conservation challenges of our time. Together, we can create a world where people and nature thrive.</p>
+                <div class="cta-buttons">
+                    <a href="#" onclick="showPage('donatePage')" class="btn btn-white">Donate Now</a>
+                    <a href="#" onclick="showPage('getInvolvedPage')" class="btn btn-outline">Other Ways to Give</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- About Us Page -->
+    <div id="aboutPage" class="page-container">
+        <section class="page-header">
+            <div class="container">
+                <h1>About Us</h1>
+                <div class="breadcrumb">
+                    <a href="#" onclick="showPage('homePage')">Home</a>
+                    <span>/</span>
+                    <a href="#" onclick="showPage('aboutPage')">About Us</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <div class="mission-content">
+                    <div class="mission-text">
+                        <h2 class="section-title">Our Story</h2>
+                        <p>The Nature Conservancy was founded in 1951 by a group of scientists and environmentalists who wanted to take direct action to protect and preserve natural areas around the world. What began as a small organization with a big idea has grown into one of the most effective and wide-reaching environmental organizations in the world.</p>
+                        <p>Our founders pioneered the concept of using private funds to purchase ecologically important lands for conservation—an approach that has since been replicated around the globe. Today, we work in all 50 U.S. states and more than 70 countries, using science to guide our conservation efforts and collaborating with local communities, governments, businesses, and other partners.</p>
+                    </div>
+                    <div class="mission-image">
+                        <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Our team in nature">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-section section-padding">
+            <div class="container">
+                <h2 class="section-title">Our Leadership</h2>
+                <p class="section-subtitle">Meet the dedicated team guiding our global conservation efforts</p>
+                
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Dr. Sarah Chen">
+                        <h3>Dr. Sarah Chen</h3>
+                        <p>Chief Executive Officer</p>
+                        <div class="team-social">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Dr. Jamal Williams">
+                        <h3>Dr. Jamal Williams</h3>
+                        <p>Chief Science Officer</p>
+                        <div class="team-social">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Maria Rodriguez">
+                        <h3>Maria Rodriguez</h3>
+                        <p>Global Conservation Director</p>
+                        <div class="team-social">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="David Kim">
+                        <h3>David Kim</h3>
+                        <p>Director of Partnerships</p>
+                        <div class="team-social">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="values-section section-padding">
+            <div class="container">
+                <h2 class="section-title">Our Values</h2>
+                <p class="section-subtitle">Guiding principles that shape everything we do</p>
+                
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Science-Based</h3>
+                            <p>We use the best available science to guide our conservation strategies and measure our impact. Our team includes hundreds of scientists who conduct research and develop innovative solutions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Collaborative</h3>
+                            <p>We work with local communities, indigenous peoples, governments, businesses, and other partners to achieve lasting conservation results that benefit both nature and people.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Non-Confrontational</h3>
+                            <p>We believe in finding common ground and practical solutions through cooperation rather than confrontation. This approach has enabled us to achieve meaningful, lasting results.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Global Reach, Local Impact</h3>
+                            <p>While we operate globally, we focus on local solutions that respect cultural and ecological differences. Our staff and partners live and work in the communities where we operate.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="timeline section-padding">
+            <div class="container">
+                <h2 class="section-title">Our History</h2>
+                <p class="section-subtitle">Key milestones in our conservation journey</p>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">1951</div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Founding</h3>
+                            <p>The Nature Conservancy is established by a group of scientists and environmentalists who want to take direct action to protect natural areas.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">1961</div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">First International Project</h3>
+                            <p>We expand beyond the U.S. with our first international project in Canada, protecting critical forest habitat.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">1988</div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Debt-for-Nature Swap</h3>
+                            <p>We pioneer the debt-for-nature concept, converting foreign debt into conservation funding in developing countries.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">2007</div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Plant a Billion Trees</h3>
+                            <p>We launch our ambitious reforestation initiative in Brazil's Atlantic Forest, aiming to plant one billion trees.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">2020</div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Global Freshwater Initiative</h3>
+                            <p>We establish our largest-ever freshwater conservation program to protect 30 major watersheds worldwide.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Our Work Page -->
+    <div id="workPage" class="page-container">
+        <section class="page-header">
+            <div class="container">
+                <h1>Our Work</h1>
+                <div class="breadcrumb">
+                    <a href="#" onclick="showPage('homePage')">Home</a>
+                    <span>/</span>
+                    <a href="#" onclick="showPage('workPage')">Our Work</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <h2 class="section-title">Conservation Priorities</h2>
+                <p class="section-subtitle">We focus on the most pressing environmental challenges facing our planet</p>
+                
+                <div class="work-tabs">
+                    <div class="work-tab active" data-tab="climate">Climate Change</div>
+                    <div class="work-tab" data-tab="land">Land Conservation</div>
+                    <div class="work-tab" data-tab="water">Water Protection</div>
+                    <div class="work-tab" data-tab="oceans">Oceans</div>
+                    <div class="work-tab" data-tab="cities">Sustainable Cities</div>
+                </div>
+                
+                <div class="work-tab-content active" id="climate-tab">
+                    <div class="mission-content">
+                        <div class="mission-text">
+                            <h3>Tackling Climate Change</h3>
+                            <p>Climate change is the greatest threat to our planet's future. We're working to reduce greenhouse gas emissions and help nature adapt through natural climate solutions. Our approach combines science, policy, and on-the-ground conservation to:</p>
+                            <ul>
+                                <li>Protect and restore forests that absorb carbon dioxide</li>
+                                <li>Promote climate-smart agriculture practices</li>
+                                <li>Conserve coastal ecosystems that buffer against storms</li>
+                                <li>Advance renewable energy solutions that protect nature</li>
+                            </ul>
+                            <a href="#" onclick="showDetailPage('climateProgram')" class="btn">Learn More About Our Climate Work</a>
+                        </div>
+                        <div class="mission-image">
+                            <img src="https://images.unsplash.com/photo-1615796153287-98eacf0abb13?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Climate change solutions">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="work-tab-content" id="land-tab">
+                    <div class="mission-content">
+                        <div class="mission-text">
+                            <h3>Protecting Vital Lands</h3>
+                            <p>From grasslands to forests to deserts, healthy lands are essential for clean air, fresh water, and biodiversity. Our land conservation efforts focus on:</p>
+                            <ul>
+                                <li>Creating and expanding protected areas</li>
+                                <li>Developing conservation easements with private landowners</li>
+                                <li>Restoring degraded habitats</li>
+                                <li>Supporting indigenous land management</li>
+                                <li>Connecting wildlife corridors</li>
+                            </ul>
+                            <a href="#" onclick="showDetailPage('landProgram')" class="btn">Explore Our Land Projects</a>
+                        </div>
+                        <div class="mission-image">
+                            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Land conservation">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="work-tab-content" id="water-tab">
+                    <div class="mission-content">
+                        <div class="mission-text">
+                            <h3>Safeguarding Freshwater</h3>
+                            <p>Freshwater ecosystems face unprecedented threats from pollution, overuse, and climate change. Our water protection initiatives:</p>
+                            <ul>
+                                <li>Restore rivers and wetlands</li>
+                                <li>Improve agricultural water efficiency</li>
+                                <li>Protect drinking water sources</li>
+                                <li>Promote sustainable water policies</li>
+                                <li>Develop innovative water-sharing agreements</li>
+                            </ul>
+                            <a href="#" onclick="showDetailPage('waterProgram')" class="btn">Discover Our Water Solutions</a>
+                        </div>
+                        <div class="mission-image">
+                            <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Water protection">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="work-tab-content" id="oceans-tab">
+                    <div class="mission-content">
+                        <div class="mission-text">
+                            <h3>Conserving Ocean Ecosystems</h3>
+                            <p>Our oceans face threats from overfishing, pollution, and acidification. We're working to:</p>
+                            <ul>
+                                <li>Establish marine protected areas</li>
+                                <li>Promote sustainable fisheries</li>
+                                <li>Restore coral reefs</li>
+                                <li>Reduce plastic pollution</li>
+                                <li>Protect coastal habitats</li>
+                            </ul>
+                            <a href="#" class="btn">Learn About Our Marine Work</a>
+                        </div>
+                        <div class="mission-image">
+                            <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Ocean conservation">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="work-tab-content" id="cities-tab">
+                    <div class="mission-content">
+                        <div class="mission-text">
+                            <h3>Building Sustainable Cities</h3>
+                            <p>As urban areas expand, we're helping cities develop in ways that benefit both people and nature through:</p>
+                            <ul>
+                                <li>Green infrastructure planning</li>
+                                <li>Urban tree planting initiatives</li>
+                                <li>Water conservation programs</li>
+                                <li>Climate-resilient design</li>
+                                <li>Community engagement</li>
+                            </ul>
+                            <a href="#" class="btn">See Our Urban Projects</a>
+                        </div>
+                        <div class="mission-image">
+                            <img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Sustainable cities">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="water-section section-padding">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Explore some of our most impactful conservation initiatives around the world</p>
+                
+                <div class="card-grid">
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1476231682828-37e571bc172f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Amazon Rainforest">
+                        <div class="card-content">
+                            <h3>Amazon Rainforest Protection</h3>
+                            <p>Working with local communities and governments to protect 10 million acres of the Amazon rainforest through sustainable development and conservation agreements.</p>
+                            <a href="#" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1509310202330-aec5af356d6d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Great Barrier Reef">
+                        <div class="card-content">
+                            <h3>Great Barrier Reef Restoration</h3>
+                            <p>Pioneering coral reef restoration techniques and working with fishermen to implement sustainable practices that protect this marine wonder.</p>
+                            <a href="#" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="African Savanna">
+                        <div class="card-content">
+                            <h3>African Savanna Conservation</h3>
+                            <p>Partnering with local communities to protect wildlife corridors and implement sustainable grazing practices across Kenya and Tanzania.</p>
+                            <a href="#" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cities-section section-padding">
+            <div class="container">
+                <h2 class="section-title">Our Approach</h2>
+                <p class="section-subtitle">How we achieve lasting conservation results</p>
+                
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Science-Based</h3>
+                            <p>Our work begins with rigorous scientific research to identify the most important places to protect and the most effective strategies for conservation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Collaborative</h3>
+                            <p>We bring together diverse stakeholders—communities, governments, businesses—to develop solutions that work for both people and nature.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Innovative</h3>
+                            <p>We pioneer new conservation tools and approaches, from debt-for-nature swaps to water funds to sustainable fisheries management.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Scalable</h3>
+                            <p>We develop models that can be replicated and scaled up to maximize our impact across regions and ecosystems.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Stories/Blog Page -->
+    <div id="storiesPage" class="page-container">
+        <section class="page-header">
+            <div class="container">
+                <h1>Stories & News</h1>
+                <div class="breadcrumb">
+                    <a href="#" onclick="showPage('homePage')">Home</a>
+                    <span>/</span>
+                    <a href="#" onclick="showPage('storiesPage')">Stories</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <h2 class="section-title">Latest Conservation Stories</h2>
+                <p class="section-subtitle">Discover inspiring stories of people and nature from around the world</p>
+                
+                <div class="blog-grid">
+                    <div class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Indigenous Conservation" class="blog-card-img">
+                        <div class="blog-card-content">
+                            <div class="blog-card-date">July 5, 2023</div>
+                            <h3 class="blog-card-title">Indigenous Wisdom in Modern Conservation</h3>
+                            <p class="blog-card-excerpt">How traditional knowledge is helping shape innovative approaches to protecting biodiversity in the Amazon rainforest.</p>
+                            <a href="#" class="btn btn-outline">Read Story</a>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Wildlife Corridors" class="blog-card-img">
+                        <div class="blog-card-content">
+                            <div class="blog-card-date">June 22, 2023</div>
+                            <h3 class="blog-card-title">Creating Pathways for Wildlife</h3>
+                            <p class="blog-card-excerpt">The ambitious project connecting fragmented habitats to allow species to migrate and adapt to climate change.</p>
+                            <a href="#" class="btn btn-outline">Read Story</a>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1476231682828-37e571bc172f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Urban Greening" class="blog-card-img">
+                        <div class="blog-card-content">
+                            <div class="blog-card-date">June 10, 2023</div>
+                            <h3 class="blog-card-title">The Urban Greening Revolution</h3>
+                            <p class="blog-card-excerpt">How cities worldwide are incorporating nature into urban planning to improve residents' health and combat climate change.</p>
+                            <a href="#" class="btn btn-outline">Read Story</a>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1536936343740-68cb2a95f935?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Coral Restoration" class="blog-card-img">
+                        <div class="blog-card-content">
+                            <div class="blog-card-date">May 30, 2023</div>
+                            <h3 class="blog-card-title">Hope for Coral Reefs</h3>
+                            <p class="blog-card-excerpt">Scientists discover resilient coral species that may help reefs survive warming oceans, with promising restoration results.</p>
+                            <a href="#" class="btn btn-outline">Read Story</a>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1542691457-46c8a9a5f1bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Sustainable Farming" class="blog-card-img">
+                        <div class="blog-card-content">
+                            <div class="blog-card-date">May 15, 2023</div>
+                            <h3 class="blog-card-title">Farming with Nature</h3>
+                            <p class="blog-card-excerpt">How regenerative agriculture practices are improving soil health, increasing yields, and sequestering carbon.</p>
+                            <a href="#" class="btn btn-outline">Read Story</a>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Forest Restoration" class="blog-card-img">
+                        <div class="blog-card-content">
+                            <div class="blog-card-date">April 28, 2023</div>
+                            <h3 class="blog-card-title">Bringing Back the Forests</h3>
+                            <p class="blog-card-excerpt">Innovative reforestation techniques are helping restore degraded lands faster than ever before.</p>
+                            <a href="#" class="btn btn-outline">Read Story</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="#" class="btn">Load More Stories</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding" style="background-color: var(--light-green);">
+            <div class="container">
+                <h2 class="section-title">Conservation News</h2>
+                <p class="section-subtitle">Stay updated with the latest developments in environmental protection</p>
+                
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="blog-card-date">July 12, 2023</div>
+                            <h3>New Protected Area Established in Borneo</h3>
+                            <p>After years of collaboration with local communities, we've helped establish a 250,000-acre protected area that safeguards critical orangutan habitat.</p>
+                            <a href="#" class="btn btn-outline">Read More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="blog-card-date">June 30, 2023</div>
+                            <h3>Breakthrough in Sustainable Fishing</h3>
+                            <p>New research shows that our community-based fisheries management approach has led to a 40% increase in fish stocks while supporting local livelihoods.</p>
+                            <a href="#" class="btn btn-outline">Read More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="blog-card-date">June 18, 2023</div>
+                            <h3>Urban Tree Planting Initiative Exceeds Goals</h3>
+                            <p>Our city greening program has planted over 1 million trees in urban areas, providing shade, reducing temperatures, and improving air quality.</p>
+                            <a href="#" class="btn btn-outline">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Get Involved Page -->
+    <div id="getInvolvedPage" class="page-container">
+        <section class="page-header">
+            <div class="container">
+                <h1>Get Involved</h1>
+                <div class="breadcrumb">
+                    <a href="#" onclick="showPage('homePage')">Home</a>
+                    <span>/</span>
+                    <a href="#" onclick="showPage('getInvolvedPage')">Get Involved</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <h2 class="section-title">Ways to Make a Difference</h2>
+                <p class="section-subtitle">Join our global community working to protect nature and build a sustainable future</p>
+                
+                <div class="card-grid">
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Volunteer">
+                        <div class="card-content">
+                            <h3>Volunteer</h3>
+                            <p>Join our team of dedicated volunteers helping with conservation projects, community outreach, and events around the world.</p>
+                            <a href="#" class="btn btn-outline">Find Opportunities</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Membership">
+                        <div class="card-content">
+                            <h3>Become a Member</h3>
+                            <p>Join as a member to receive exclusive updates, event invitations, and the satisfaction of supporting critical conservation work.</p>
+                            <a href="#" class="btn btn-outline">Join Today</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Advocate">
+                        <div class="card-content">
+                            <h3>Advocate for Nature</h3>
+                            <p>Use your voice to support policies that protect our planet. Learn how to contact elected officials and make an impact.</p>
+                            <a href="#" class="btn btn-outline">Take Action</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="events-section section-padding">
+            <div class="container">
+                <h2 class="section-title">Upcoming Events</h2>
+                <p class="section-subtitle">Join us for conservation activities, educational programs, and community gatherings</p>
+                
+                <div class="events-calendar">
+                    <div class="event-card">
+                        <div class="event-date">
+                            <div class="day">15</div>
+                            <div class="month">July</div>
+                        </div>
+                        <div class="event-content">
+                            <h3 class="event-title">Beach Cleanup Day</h3>
+                            <div class="event-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Santa Monica Beach</span>
+                                <span><i class="fas fa-clock"></i> 9:00 AM</span>
+                            </div>
+                            <p>Join us for our monthly beach cleanup to remove plastic and debris from this important coastal ecosystem.</p>
+                            <a href="#" class="btn btn-outline">Register</a>
+                        </div>
+                    </div>
+                    
+                    <div class="event-card">
+                        <div class="event-date">
+                            <div class="day">22</div>
+                            <div class="month">July</div>
+                        </div>
+                        <div class="event-content">
+                            <h3 class="event-title">Urban Tree Planting</h3>
+                            <div class="event-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Downtown Park</span>
+                                <span><i class="fas fa-clock"></i> 8:30 AM</span>
+                            </div>
+                            <p>Help us plant 100 native trees to improve air quality and provide habitat for urban wildlife.</p>
+                            <a href="#" class="btn btn-outline">Register</a>
+                        </div>
+                    </div>
+                    
+                    <div class="event-card">
+                        <div class="event-date">
+                            <div class="day">5</div>
+                            <div class="month">August</div>
+                        </div>
+                        <div class="event-content">
+                            <h3 class="event-title">Conservation Webinar</h3>
+                            <div class="event-meta">
+                                <span><i class="fas fa-video"></i> Online Event</span>
+                                <span><i class="fas fa-clock"></i> 6:00 PM</span>
+                            </div>
+                            <p>Learn about innovative approaches to protecting pollinators in urban environments from our lead ecologist.</p>
+                            <a href="#" class="btn btn-outline">Register</a>
+                        </div>
+                    </div>
+                    
+                    <div class="event-card">
+                        <div class="event-date">
+                            <div class="day">12</div>
+                            <div class="month">August</div>
+                        </div>
+                        <div class="event-content">
+                            <h3 class="event-title">Nature Photography Workshop</h3>
+                            <div class="event-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Wildlife Refuge</span>
+                                <span><i class="fas fa-clock"></i> 7:00 AM</span>
+                            </div>
+                            <p>Improve your nature photography skills while learning about local wildlife conservation efforts.</p>
+                            <a href="#" class="btn btn-outline">Register</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <h2 class="section-title">Volunteer With Us</h2>
+                <p class="section-subtitle">Fill out our volunteer application to get started</p>
+                
+                <div class="volunteer-form">
+                    <h3 class="form-title">Volunteer Application</h3>
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group" style="flex: 1;">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" class="form-control" required>
+                            </div>
+                            <div class="form-group" style="flex: 1;">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="location">Location</label>
+                            <input type="text" id="location" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="interests">Areas of Interest</label>
+                            <select id="interests" class="form-control" multiple>
+                                <option>Habitat Restoration</option>
+                                <option>Community Outreach</option>
+                                <option>Event Support</option>
+                                <option>Scientific Research</option>
+                                <option>Office Assistance</option>
+                                <option>Photography/Videography</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="availability">Availability</label>
+                            <select id="availability" class="form-control">
+                                <option>Weekdays</option>
+                                <option>Weekends</option>
+                                <option>Both</option>
+                                <option>Flexible</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="experience">Relevant Experience or Skills</label>
+                            <textarea id="experience" class="form-control" rows="4"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="motivation">Why do you want to volunteer with us?</label>
+                            <textarea id="motivation" class="form-control" rows="4" required></textarea>
+                        </div>
+                        
+                        <div style="text-align: center;">
+                            <button type="submit" class="btn">Submit Application</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Donate Page -->
+    <div id="donatePage" class="page-container">
+        <section class="page-header">
+            <div class="container">
+                <h1>Support Our Work</h1>
+                <div class="breadcrumb">
+                    <a href="#" onclick="showPage('homePage')">Home</a>
+                    <span>/</span>
+                    <a href="#" onclick="showPage('donatePage')">Donate</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <div class="mission-content">
+                    <div class="mission-text">
+                        <h2 class="section-title">Your Gift Makes a Difference</h2>
+                        <p>Every donation helps us protect nature and preserve life around the world. With your support, we can:</p>
+                        <ul>
+                            <li>Protect critical habitats for endangered species</li>
+                            <li>Combat climate change through natural solutions</li>
+                            <li>Ensure clean water for communities and wildlife</li>
+                            <li>Support sustainable livelihoods for local communities</li>
+                            <li>Advance scientific research and innovation</li>
+                        </ul>
+                        <p>Your contribution is tax-deductible to the fullest extent allowed by law.</p>
+                    </div>
+                    <div class="mission-image">
+                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="People planting trees">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding" style="background-color: var(--light-gray);">
+            <div class="container">
+                <div class="donation-form">
+                    <h2 class="section-title">Make a Donation</h2>
+                    <p class="section-subtitle">Choose your donation amount and payment method</p>
+                    
+                    <form>
+                        <div class="donation-options">
+                            <div class="donation-option active">$25</div>
+                            <div class="donation-option">$50</div>
+                            <div class="donation-option">$100</div>
+                            <div class="donation-option">$250</div>
+                            <div class="donation-option">Other</div>
+                        </div>
+                        
+                        <div class="form-group" id="customAmount" style="display: none;">
+                            <label for="amount">Custom Amount ($)</label>
+                            <input type="number" id="amount" class="form-control" min="1">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="frequency">Donation Frequency</label>
+                            <select id="frequency" class="form-control">
+                                <option>One-time</option>
+                                <option>Monthly</option>
+                                <option>Quarterly</option>
+                                <option>Annual</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="designation">Designation (Optional)</label>
+                            <select id="designation" class="form-control">
+                                <option>Where Most Needed</option>
+                                <option>Climate Change</option>
+                                <option>Land Conservation</option>
+                                <option>Water Protection</option>
+                                <option>Ocean Conservation</option>
+                                <option>Urban Sustainability</option>
+                            </select>
+                        </div>
+                        
+                        <h3 style="margin: 2rem 0 1rem; color: var(--primary);">Personal Information</h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group" style="flex: 1;">
+                                <label for="donorFirstName">First Name</label>
+                                <input type="text" id="donorFirstName" class="form-control" required>
+                            </div>
+                            <div class="form-group" style="flex: 1;">
+                                <label for="donorLastName">Last Name</label>
+                                <input type="text" id="donorLastName" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="donorEmail">Email Address</label>
+                            <input type="email" id="donorEmail" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="donorAddress">Street Address</label>
+                            <input type="text" id="donorAddress" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group" style="flex: 1;">
+                                <label for="donorCity">City</label>
+                                <input type="text" id="donorCity" class="form-control" required>
+                            </div>
+                            <div class="form-group" style="flex: 1;">
+                                <label for="donorState">State/Province</label>
+                                <input type="text" id="donorState" class="form-control" required>
+                            </div>
+                            <div class="form-group" style="flex: 1;">
+                                <label for="donorZip">ZIP/Postal Code</label>
+                                <input type="text" id="donorZip" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <h3 style="margin: 2rem 0 1rem; color: var(--primary);">Payment Information</h3>
+                        
+                        <div class="form-group">
+                            <label for="cardNumber">Card Number</label>
+                            <input type="text" id="cardNumber" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group" style="flex: 1;">
+                                <label for="expDate">Expiration Date</label>
+                                <input type="text" id="expDate" class="form-control" placeholder="MM/YY" required>
+                            </div>
+                            <div class="form-group" style="flex: 1;">
+                                <label for="cvv">Security Code</label>
+                                <input type="text" id="cvv" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="donorComments">Comments (Optional)</label>
+                            <textarea id="donorComments" class="form-control" rows="3"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="checkbox" id="newsletter" checked>
+                            <label for="newsletter">Send me conservation updates and ways to get involved</label>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: 2rem;">
+                            <button type="submit" class="btn">Donate Now</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="other-ways section-padding">
+            <div class="container">
+                <h2 class="section-title">Other Ways to Give</h2>
+                <p class="section-subtitle">Explore additional options to support our conservation mission</p>
+                
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Planned Giving</h3>
+                            <p>Include The Nature Conservancy in your will or estate plans to create a lasting conservation legacy.</p>
+                            <a href="#" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Corporate Partnerships</h3>
+                            <p>Partner with us to align your business with environmental sustainability and conservation.</p>
+                            <a href="#" class="btn btn-outline">Explore Opportunities</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Stock Donations</h3>
+                            <p>Donate appreciated securities and potentially receive tax benefits while supporting our work.</p>
+                            <a href="#" class="btn btn-outline">Get Details</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Matching Gifts</h3>
+                            <p>Double your impact! Many employers match charitable contributions made by employees.</p>
+                            <a href="#" class="btn btn-outline">Check Eligibility</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Privacy Policy Page -->
+    <div id="privacyPage" class="page-container">
+        <section class="page-header">
+            <div class="container">
+                <a href="#" onclick="showPage('homePage')" class="back-button">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </a>
+                <h1>Privacy Policy</h1>
+                <div class="breadcrumb">
+                    <a href="#" onclick="showPage('homePage')">Home</a>
+                    <span>/</span>
+                    <a href="#" onclick="showPage('privacyPage')">Privacy Policy</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <div class="privacy-content">
+                    <p><strong>Last Updated:</strong> June 1, 2023</p>
+                    
+                    <p>The Nature Conservancy ("we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or make a donation.</p>
+                    
+                    <h2>Information We Collect</h2>
+                    <p>We may collect personal information that you voluntarily provide to us when you:</p>
+                    <ul>
+                        <li>Make a donation</li>
+                        <li>Register for an event</li>
+                        <li>Sign up for our newsletter</li>
+                        <li>Volunteer with us</li>
+                        <li>Contact us with inquiries</li>
+                    </ul>
+                    
+                    <p>The types of personal information we may collect include:</p>
+                    <ul>
+                        <li>Name and contact information (email address, phone number, mailing address)</li>
+                        <li>Payment information for donations</li>
+                        <li>Demographic information</li>
+                        <li>Communication preferences</li>
+                    </ul>
+                    
+                    <h2>How We Use Your Information</h2>
+                    <p>We may use the information we collect for various purposes, including to:</p>
+                    <ul>
+                        <li>Process your donations and send tax receipts</li>
+                        <li>Send you updates about our conservation work</li>
+                        <li>Respond to your inquiries and requests</li>
+                        <li>Improve our website and services</li>
+                        <li>Comply with legal obligations</li>
+                    </ul>
+                    
+                    <h2>Sharing Your Information</h2>
+                    <p>We do not sell or rent your personal information to third parties. We may share information with:</p>
+                    <ul>
+                        <li>Service providers who assist with our operations (payment processors, mailing services)</li>
+                        <li>Legal authorities when required by law</li>
+                        <li>Other conservation organizations when collaborating on joint initiatives</li>
+                    </ul>
+                    
+                    <h2>Data Security</h2>
+                    <p>We implement appropriate technical and organizational measures to protect your personal information. However, no internet transmission is completely secure, and we cannot guarantee absolute security.</p>
+                    
+                    <h2>Your Choices</h2>
+                    <p>You may:</p>
+                    <ul>
+                        <li>Opt-out of receiving communications from us</li>
+                        <li>Request access to or correction of your personal information</li>
+                        <li>Request deletion of your personal information, subject to legal requirements</li>
+                    </ul>
+                    
+                    <h2>Changes to This Policy</h2>
+                    <p>We may update this Privacy Policy periodically. We will notify you of significant changes by posting the new policy on our website.</p>
+                    
+                    <h2>Contact Us</h2>
+                    <p>If you have questions about this Privacy Policy, please contact us at:</p>
+                    <address>
+                        The Nature Conservancy<br>
+                        Attn: Privacy Officer<br>
+                        123 Conservation Way<br>
+                        Portland, OR 97204<br>
+                        Email: privacy@natureconservancy.org
+                    </address>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Terms of Use Page -->
+    <div id="termsPage" class="page-container">
+        <section class="page-header">
+            <div class="container">
+                <a href="#" onclick="showPage('homePage')" class="back-button">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </a>
+                <h1>Terms of Use</h1>
+                <div class="breadcrumb">
+                    <a href="#" onclick="showPage('homePage')">Home</a>
+                    <span>/</span>
+                    <a href="#" onclick="showPage('termsPage')">Terms of Use</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <div class="privacy-content">
+                    <p><strong>Last Updated:</strong> June 1, 2023</p>
+                    
+                    <p>Welcome to The Nature Conservancy website. By accessing or using our website, you agree to comply with and be bound by these Terms of Use.</p>
+                    
+                    <h2>Use of Website</h2>
+                    <p>This website is for your personal and non-commercial use. You may not:</p>
+                    <ul>
+                        <li>Use the website for any unlawful purpose</li>
+                        <li>Attempt to gain unauthorized access to our systems</li>
+                        <li>Interfere with the website's operation</li>
+                        <li>Copy, modify, or distribute content without permission</li>
+                    </ul>
+                    
+                    <h2>Intellectual Property</h2>
+                    <p>All content on this website, including text, graphics, logos, and images, is the property of The Nature Conservancy or its content suppliers and is protected by copyright laws.</p>
+                    
+                    <h2>Donations</h2>
+                    <p>All donations made through our website are final and non-refundable. We make every effort to ensure the security of your donation transactions.</p>
+                    
+                    <h2>Disclaimer</h2>
+                    <p>The information on this website is provided "as is" without warranties of any kind. We do not guarantee the accuracy or completeness of the content.</p>
+                    
+                    <h2>Limitation of Liability</h2>
+                    <p>The Nature Conservancy will not be liable for any damages arising from your use of this website.</p>
+                    
+                    <h2>Links to Other Websites</h2>
+                    <p>Our website may contain links to third-party websites. We are not responsible for the content or practices of these sites.</p>
+                    
+                    <h2>Changes to Terms</h2>
+                    <p>We may modify these Terms of Use at any time. Your continued use of the website constitutes acceptance of the modified terms.</p>
+                    
+                    <h2>Governing Law</h2>
+                    <p>These Terms of Use shall be governed by the laws of the State of Oregon without regard to its conflict of law provisions.</p>
+                    
+                    <h2>Contact Us</h2>
+                    <p>If you have questions about these Terms of Use, please contact us at:</p>
+                    <address>
+                        The Nature Conservancy<br>
+                        Attn: Legal Department<br>
+                        123 Conservation Way<br>
+                        Portland, OR 97204<br>
+                        Email: legal@natureconservancy.org
+                    </address>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Cookie Policy Page -->
+    <div id="cookiePage" class="page-container">
+        <section class="page-header">
+            <div class="container">
+                <a href="#" onclick="showPage('homePage')" class="back-button">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </a>
+                <h1>Cookie Policy</h1>
+                <div class="breadcrumb">
+                    <a href="#" onclick="showPage('homePage')">Home</a>
+                    <span>/</span>
+                    <a href="#" onclick="showPage('cookiePage')">Cookie Policy</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <div class="privacy-content">
+                    <p><strong>Last Updated:</strong> June 1, 2023</p>
+                    
+                    <p>This Cookie Policy explains how The Nature Conservancy ("we," "us," or "our") uses cookies and similar technologies when you visit our website.</p>
+                    
+                    <h2>What Are Cookies?</h2>
+                    <p>Cookies are small text files stored on your device when you visit websites. They help the website remember information about your visit.</p>
+                    
+                    <h2>How We Use Cookies</h2>
+                    <p>We use cookies for the following purposes:</p>
+                    <ul>
+                        <li><strong>Essential Cookies:</strong> Necessary for the website to function properly</li>
+                        <li><strong>Performance Cookies:</strong> Help us understand how visitors use our site</li>
+                        <li><strong>Functional Cookies:</strong> Remember your preferences</li>
+                        <li><strong>Targeting Cookies:</strong> Used for advertising purposes</li>
+                    </ul>
+                    
+                    <h2>Third-Party Cookies</h2>
+                    <p>We may allow third parties to place cookies on your device for:</p>
+                    <ul>
+                        <li>Analytics services (e.g., Google Analytics)</li>
+                        <li>Social media features</li>
+                        <li>Advertising networks</li>
+                    </ul>
+                    
+                    <h2>Your Cookie Choices</h2>
+                    <p>You can control or disable cookies through your browser settings. However, disabling cookies may affect website functionality.</p>
+                    
+                    <p>Most browsers allow you to:</p>
+                    <ul>
+                        <li>See what cookies are stored and delete them</li>
+                        <li>Block third-party cookies</li>
+                        <li>Block all cookies</li>
+                        <li>Clear all cookies when you close your browser</li>
+                    </ul>
+                    
+                    <h2>Changes to This Policy</h2>
+                    <p>We may update this Cookie Policy from time to time. We will notify you of significant changes by posting the new policy on our website.</p>
+                    
+                    <h2>Contact Us</h2>
+                    <p>If you have questions about our use of cookies, please contact us at:</p>
+                    <address>
+                        The Nature Conservancy<br>
+                        Attn: Privacy Officer<br>
+                        123 Conservation Way<br>
+                        Portland, OR 97204<br>
+                        Email: privacy@natureconservancy.org
+                    </address>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Accessibility Page -->
+    <div id="accessibilityPage" class="page-container">
+        <section class="page-header">
+            <div class="container">
+                <a href="#" onclick="showPage('homePage')" class="back-button">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </a>
+                <h1>Accessibility Statement</h1>
+                <div class="breadcrumb">
+                    <a href="#" onclick="showPage('homePage')">Home</a>
+                    <span>/</span>
+                    <a href="#" onclick="showPage('accessibilityPage')">Accessibility</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <div class="privacy-content">
+                    <p><strong>Last Updated:</strong> June 1, 2023</p>
+                    
+                    <p>The Nature Conservancy is committed to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone and applying the relevant accessibility standards.</p>
+                    
+                    <h2>Conformance Status</h2>
+                    <p>We aim to conform to the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA. These guidelines explain how to make web content more accessible for people with disabilities.</p>
+                    
+                    <h2>Accessibility Features</h2>
+                    <p>Our website includes the following accessibility features:</p>
+                    <ul>
+                        <li>Keyboard navigation</li>
+                        <li>Alternative text for images</li>
+                        <li>Clear and consistent navigation</li>
+                        <li>Resizable text</li>
+                        <li>High contrast options</li>
+                    </ul>
+                    
+                    <h2>Feedback</h2>
+                    <p>We welcome your feedback on the accessibility of our website. If you encounter any accessibility barriers, please let us know:</p>
+                    <address>
+                        The Nature Conservancy<br>
+                        Attn: Accessibility Coordinator<br>
+                        123 Conservation Way<br>
+                        Portland, OR 97204<br>
+                        Phone: (555) 123-4567<br>
+                        Email: accessibility@natureconservancy.org
+                    </address>
+                    
+                    <h2>Technical Specifications</h2>
+                    <p>This website relies on the following technologies for accessibility:</p>
+                    <ul>
+                        <li>HTML</li>
+                        <li>WAI-ARIA</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                    </ul>
+                    
+                    <h2>Assessment Approach</h2>
+                    <p>We assess accessibility through the following methods:</p>
+                    <ul>
+                        <li>Automated testing tools</li>
+                        <li>Manual testing by our team</li>
+                        <li>Feedback from users with disabilities</li>
+                    </ul>
+                    
+                    <h2>Ongoing Efforts</h2>
+                    <p>We are continuously working to improve accessibility by:</p>
+                    <ul>
+                        <li>Training our staff on accessibility</li>
+                        <li>Incorporating accessibility into our development process</li>
+                        <li>Regularly reviewing our website for compliance</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Site Map Page -->
+    <div id="sitemapPage" class="page-container">
+        <section class="page-header">
+            <div class="container">
+                <a href="#" onclick="showPage('homePage')" class="back-button">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </a>
+                <h1>Site Map</h1>
+                <div class="breadcrumb">
+                    <a href="#" onclick="showPage('homePage')">Home</a>
+                    <span>/</span>
+                    <a href="#" onclick="showPage('sitemapPage')">Site Map</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <div class="privacy-content">
+                    <h2>Main Navigation</h2>
+                    <ul>
+                        <li><a href="#" onclick="showPage('homePage')">Home</a></li>
+                        <li><a href="#" onclick="showPage('aboutPage')">About Us</a>
+                            <ul>
+                                <li>Our Mission</li>
+                                <li>Our Team</li>
+                                <li>Our History</li>
+                                <li>Our Values</li>
+                            </ul>
+                        </li>
+                        <li><a href="#" onclick="showPage('workPage')">Our Work</a>
+                            <ul>
+                                <li>Climate Change</li>
+                                <li>Land Conservation</li>
+                                <li>Water Protection</li>
+                                <li>Oceans</li>
+                                <li>Sustainable Cities</li>
+                            </ul>
+                        </li>
+                        <li><a href="#" onclick="showPage('storiesPage')">Stories</a>
+                            <ul>
+                                <li>Latest Blog Posts</li>
+                                <li>Conservation News</li>
+                            </ul>
+                        </li>
+                        <li><a href="#" onclick="showPage('getInvolvedPage')">Get Involved</a>
+                            <ul>
+                                <li>Volunteer</li>
+                                <li>Become a Member</li>
+                                <li>Advocate for Nature</li>
+                                <li>Upcoming Events</li>
+                            </ul>
+                        </li>
+                        <li><a href="#" onclick="showPage('donatePage')">Donate</a></li>
+                    </ul>
+                    
+                    <h2>Legal Pages</h2>
+                    <ul>
+                        <li><a href="#" onclick="showPage('privacyPage')">Privacy Policy</a></li>
+                        <li><a href="#" onclick="showPage('termsPage')">Terms of Use</a></li>
+                        <li><a href="#" onclick="showPage('cookiePage')">Cookie Policy</a></li>
+                        <li><a href="#" onclick="showPage('accessibilityPage')">Accessibility Statement</a></li>
+                        <li><a href="#" onclick="showPage('faqPage')">FAQ</a></li>
+                    </ul>
+                    
+                    <h2>Quick Links</h2>
+                    <ul>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Press Room</a></li>
+                        <li><a href="#">Financial Reports</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- FAQ Page -->
+    <div id="faqPage" class="page-container">
+        <section class="page-header">
+            <div class="container">
+                <a href="#" onclick="showPage('homePage')" class="back-button">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </a>
+                <h1>Frequently Asked Questions</h1>
+                <div class="breadcrumb">
+                    <a href="#" onclick="showPage('homePage')">Home</a>
+                    <span>/</span>
+                    <a href="#" onclick="showPage('faqPage')">FAQ</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <div class="privacy-content">
+                    <h2>General Questions</h2>
+                    
+                    <h3>What is The Nature Conservancy?</h3>
+                    <p>The Nature Conservancy is a global environmental nonprofit working to conserve the lands and waters on which all life depends. Founded in 1951, we operate in all 50 U.S. states and more than 70 countries.</p>
+                    
+                    <h3>How is The Nature Conservancy different from other environmental organizations?</h3>
+                    <p>We take a science-based, non-confrontational approach to conservation. We work collaboratively with communities, governments, businesses, and other partners to develop practical solutions to environmental challenges.</p>
+                    
+                    <h2>Donation Questions</h2>
+                    
+                    <h3>Is my donation tax-deductible?</h3>
+                    <p>Yes, The Nature Conservancy is a 501(c)(3) organization, and donations are tax-deductible to the fullest extent allowed by law. You will receive a receipt for tax purposes.</p>
+                    
+                    <h3>How can I update my recurring donation?</h3>
+                    <p>You can update your recurring donation by contacting our donor services team at donations@natureconservancy.org or calling (555) 123-4567.</p>
+                    
+                    <h3>What percentage of my donation goes to conservation programs?</h3>
+                    <p>On average, 72% of our resources go directly to conservation programs, 16% to fundraising, and 12% to administration. We are committed to financial efficiency and transparency.</p>
+                    
+                    <h2>Volunteer Questions</h2>
+                    
+                    <h3>How can I volunteer with The Nature Conservancy?</h3>
+                    <p>We offer various volunteer opportunities depending on your location and interests. Visit our <a href="#" onclick="showPage('getInvolvedPage')">Get Involved</a> page to explore current opportunities.</p>
+                    
+                    <h3>Do I need special skills to volunteer?</h3>
+                    <p>Most volunteer positions don't require special skills, though some projects may benefit from specific expertise. We provide training for all volunteer roles.</p>
+                    
+                    <h2>Conservation Questions</h2>
+                    
+                    <h3>How do you decide which projects to pursue?</h3>
+                    <p>Our projects are selected based on scientific research that identifies the most important places to protect and the most effective strategies for conservation.</p>
+                    
+                    <h3>How can I get conservation help for my land?</h3>
+                    <p>We work with private landowners through conservation easements and other programs. Contact our land conservation team at land@natureconservancy.org for more information.</p>
+                    
+                    <h2>Contact Information</h2>
+                    <p>If you have additional questions, please contact us:</p>
+                    <address>
+                        The Nature Conservancy<br>
+                        123 Conservation Way<br>
+                        Portland, OR 97204<br>
+                        Phone: (555) 123-4567<br>
+                        Email: info@natureconservancy.org
+                    </address>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Detail Pages Container -->
+    <div class="detail-page-container">
+        <!-- Forest Restoration Blog Detail -->
+        <div id="forestBlog" class="detail-page">
+            <section class="page-header">
+                <div class="container">
+                    <a href="#" onclick="showPage('homePage')" class="back-button">
+                        <i class="fas fa-arrow-left"></i> Back to Home
+                    </a>
+                    <h1>Innovative Approaches to Forest Restoration</h1>
+                    <div class="detail-meta">
+                        <span><i class="far fa-calendar"></i> June 15, 2023</span>
+                        <span><i class="far fa-user"></i> Dr. Sarah Greenfield</span>
+                        <span><i class="far fa-clock"></i> 5 min read</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-padding">
+                <div class="container">
+                    <div class="detail-content">
+                        <div class="detail-header">
+                            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Forest Restoration">
+                        </div>
+                        
+                        <p>Forests are the lungs of our planet, but they face unprecedented threats from deforestation, climate change, and invasive species. Traditional reforestation methods often struggle to keep pace with these challenges. That's why conservationists are pioneering innovative approaches to restore forests faster and more effectively than ever before.</p>
+                        
+                        <h2>The Miyawaki Method: Creating Mini-Forests</h2>
+                        <p>Developed by Japanese botanist Akira Miyawaki, this technique creates dense, biodiverse forests in small urban spaces. By planting native species close together in specially prepared soil, these "mini-forests" grow 10 times faster and become self-sustaining within just 20 years.</p>
+                        
+                        <blockquote>
+                            "The Miyawaki method mimics natural forest regeneration processes but accelerates them dramatically. We've seen incredible results in urban areas where space is limited."
+                        </blockquote>
+                        
+                        <h2>Drone Reforestation: Planting from the Sky</h2>
+                        <p>In hard-to-reach areas, drone technology is revolutionizing reforestation. Specially designed drones can plant up to 100,000 seed pods per day, with each pod containing nutrients and moisture-retaining materials to boost survival rates.</p>
+                        
+                        <div class="detail-gallery">
+                            <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Drone reforestation">
+                            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Forest canopy">
+                        </div>
+                        
+                        <h2>Fungal Networks: Nature's Internet</h2>
+                        <p>Scientists are harnessing mycorrhizal fungi networks that connect tree roots underground. These "wood wide web" systems allow trees to share nutrients and information. By introducing these fungi to new plantings, we're creating resilient forest ecosystems that support themselves.</p>
+                        
+                        <h3>Key Benefits of Modern Forest Restoration</h3>
+                        <ul>
+                            <li>300% faster growth compared to traditional methods</li>
+                            <li>Up to 90% survival rate for new plantings</li>
+                            <li>30% greater carbon sequestration capacity</li>
+                            <li>Enhanced biodiversity with 5x more species</li>
+                        </ul>
+                        
+                        <p>As we implement these innovative techniques across our restoration projects, we're not just planting trees—we're building resilient ecosystems that will thrive for generations. The future of forests looks brighter thanks to these groundbreaking approaches.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Coral Reefs Blog Detail -->
+        <div id="coralBlog" class="detail-page">
+            <section class="page-header">
+                <div class="container">
+                    <a href="#" onclick="showPage('homePage')" class="back-button">
+                        <i class="fas fa-arrow-left"></i> Back to Home
+                    </a>
+                    <h1>The Future of Coral Reefs in a Warming World</h1>
+                    <div class="detail-meta">
+                        <span><i class="far fa-calendar"></i> May 28, 2023</span>
+                        <span><i class="far fa-user"></i> Dr. Marcus Ocean</span>
+                        <span><i class="far fa-clock"></i> 6 min read</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-padding">
+                <div class="container">
+                    <div class="detail-content">
+                        <div class="detail-header">
+                            <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Coral Reefs">
+                        </div>
+                        
+                        <p>Coral reefs, often called the rainforests of the sea, are facing unprecedented challenges from climate change. Rising ocean temperatures cause coral bleaching, where corals expel the symbiotic algae that provide them with color and nutrients. But new research offers hope for these vital ecosystems.</p>
+                        
+                        <h2>Super Corals: Nature's Resilient Survivors</h2>
+                        <p>Our research team has identified several coral species that demonstrate remarkable resilience to warmer waters. These "super corals" possess genetic adaptations that allow them to withstand temperature fluctuations that would bleach most other corals.</p>
+                        
+                        <blockquote>
+                            "In the Red Sea, we've discovered corals thriving in waters 2-3°C warmer than their typical habitats. Understanding their resilience could be key to saving reefs worldwide."
+                        </blockquote>
+                        
+                        <h2>Assisted Evolution: Speeding Up Nature's Process</h2>
+                        <p>Scientists are experimenting with selective breeding techniques to enhance coral resilience. By cross-breading heat-tolerant corals and exposing larvae to gradually increasing temperatures, we're accelerating the natural adaptation process.</p>
+                        
+                        <div class="detail-gallery">
+                            <img src="https://images.unsplash.com/photo-1542691457-46c8a9a5f1bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Coral research">
+                            <img src="https://images.unsplash.com/photo-1536936343740-68cb2a95f935?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Coral nursery">
+                        </div>
+                        
+                        <h2>3D Printing Artificial Reef Structures</h2>
+                        <p>Innovative technology is helping restore damaged reefs through 3D-printed structures that mimic natural coral formations. These structures provide immediate habitat for marine life while serving as foundations for new coral growth.</p>
+                        
+                        <h3>Conservation Strategies Making a Difference</h3>
+                        <ul>
+                            <li>Establishing marine protected areas to reduce human impact</li>
+                            <li>Reducing land-based pollution that harms reef systems</li>
+                            <li>Developing coral nurseries to grow resilient species</li>
+                            <li>Implementing sustainable fishing practices</li>
+                        </ul>
+                        
+                        <p>While challenges remain, these innovative approaches offer real hope for coral reefs. By combining scientific research with conservation action, we're working to ensure these vibrant ecosystems continue to sustain both people and wildlife for generations to come.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Water Conservation Blog Detail -->
+        <div id="waterBlog" class="detail-page">
+            <section class="page-header">
+                <div class="container">
+                    <a href="#" onclick="showPage('homePage')" class="back-button">
+                        <i class="fas fa-arrow-left"></i> Back to Home
+                    </a>
+                    <h1>Water Conservation Strategies for Cities</h1>
+                    <div class="detail-meta">
+                        <span><i class="far fa-calendar"></i> May 10, 2023</span>
+                        <span><i class="far fa-user"></i> Dr. Lisa Waters</span>
+                        <span><i class="far fa-clock"></i> 4 min read</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-padding">
+                <div class="container">
+                    <div class="detail-content">
+                        <div class="detail-header">
+                            <img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Water Conservation">
+                        </div>
+                        
+                        <p>As urban populations grow and climate patterns shift, cities worldwide face increasing water scarcity challenges. Innovative water conservation strategies are essential for sustainable urban development. Here are some groundbreaking approaches cities are implementing to secure their water future.</p>
+                        
+                        <h2>Green Infrastructure: Nature's Water Filtration</h2>
+                        <p>Urban areas are replacing traditional concrete infrastructure with green solutions that mimic natural water cycles. Green roofs, permeable pavements, and bioswales capture rainwater where it falls, reducing runoff and replenishing groundwater supplies.</p>
+                        
+                        <blockquote>
+                            "In Philadelphia, green infrastructure projects have reduced stormwater runoff by 1.7 billion gallons annually while creating vibrant community spaces."
+                        </blockquote>
+                        
+                        <h2>Smart Water Networks: Technology to the Rescue</h2>
+                        <p>Advanced sensor networks and AI-powered systems are helping cities detect leaks, monitor water quality, and optimize distribution in real-time. These smart water networks can reduce water loss by up to 25% and significantly cut operational costs.</p>
+                        
+                        <div class="detail-gallery">
+                            <img src="https://images.unsplash.com/photo-1509310202330-aec5af356d6d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Smart water system">
+                            <img src="https://images.unsplash.com/photo-1509310202330-aec5af356d6d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Water recycling">
+                        </div>
+                        
+                        <h2>Water Recycling: Closing the Loop</h2>
+                        <p>Forward-thinking cities are implementing advanced water recycling systems that treat wastewater to drinking water standards. Singapore's NEWater program now meets 40% of the nation's water needs through recycling, with plans to reach 55% by 2060.</p>
+                        
+                        <h3>Key Urban Water Conservation Strategies</h3>
+                        <ul>
+                            <li>Implement tiered water pricing to encourage conservation</li>
+                            <li>Replace water-intensive landscaping with native drought-resistant plants</li>
+                            <li>Install smart irrigation systems that respond to weather conditions</li>
+                            <li>Promote water-efficient appliances through rebate programs</li>
+                            <li>Develop urban wetlands that naturally filter and store water</li>
+                        </ul>
+                        
+                        <p>As cities continue to innovate, these water conservation strategies not only address scarcity but also create more resilient, livable urban environments. By working with nature rather than against it, we're building sustainable water systems for the future.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Climate Change Program Detail -->
+        <div id="climateProgram" class="detail-page">
+            <section class="page-header">
+                <div class="container">
+                    <a href="#" onclick="showPage('homePage')" class="back-button">
+                        <i class="fas fa-arrow-left"></i> Back to Home
+                    </a>
+                    <h1>Climate Change Program</h1>
+                    <div class="detail-meta">
+                        <span><i class="fas fa-globe-americas"></i> Global Initiative</span>
+                        <span><i class="fas fa-users"></i> 150+ Projects</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-padding">
+                <div class="container">
+                    <div class="detail-content">
+                        <div class="detail-header">
+                            <img src="https://images.unsplash.com/photo-1615796153287-98eacf0abb13?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Climate Change">
+                        </div>
+                        
+                        <p>Climate change is the defining environmental challenge of our time. Our Climate Change Program takes a comprehensive approach to reduce greenhouse gas emissions and help nature adapt through natural climate solutions. Our approach combines science, policy, and on-the-ground conservation to:</p>
+                        
+                        <h2>Natural Climate Solutions</h2>
+                        <p>Nature itself offers powerful solutions to climate change. Forests, wetlands, and grasslands sequester carbon dioxide from the atmosphere. Our program focuses on protecting and restoring these natural carbon sinks:</p>
+                        
+                        <blockquote>
+                            "Protecting and restoring forests, wetlands, and grasslands could provide more than one-third of the emissions reductions needed by 2030 to keep global warming below 2°C."
+                        </blockquote>
+                        
+                        <h2>Key Focus Areas</h2>
+                        
+                        <h3>Forest Conservation</h3>
+                        <p>We're working to prevent deforestation across critical landscapes like the Amazon, Congo Basin, and Southeast Asia. By partnering with local communities and governments, we're creating economic alternatives to deforestation.</p>
+                        
+                        <h3>Coastal Ecosystem Restoration</h3>
+                        <p>Mangroves, salt marshes, and seagrass meadows store carbon at rates up to 10 times higher than terrestrial forests. Our coastal restoration projects protect these vital ecosystems while creating natural barriers against storm surges.</p>
+                        
+                        <div class="detail-gallery">
+                            <img src="https://images.unsplash.com/photo-1509310202330-aec5af356d6d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Mangrove restoration">
+                            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Reforestation">
+                        </div>
+                        
+                        <h3>Sustainable Agriculture</h3>
+                        <p>We're helping farmers implement practices that reduce emissions, improve soil health, and increase resilience. Regenerative agriculture techniques can transform farmland from a carbon source to a carbon sink.</p>
+                        
+                        <h2>Program Impact</h2>
+                        <ul>
+                            <li>Protected over 50 million acres of high-carbon forests</li>
+                            <li>Restored 250,000 acres of coastal wetlands</li>
+                            <li>Trained 15,000 farmers in climate-smart agriculture</li>
+                            <li>Prevented 500 million tons of CO2 emissions</li>
+                        </ul>
+                        
+                        <p>Through science, collaboration, and innovation, our Climate Change Program is creating a more resilient future for both people and nature. Join us in this critical work to address the climate crisis.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Land Conservation Program Detail -->
+        <div id="landProgram" class="detail-page">
+            <section class="page-header">
+                <div class="container">
+                    <a href="#" onclick="showPage('homePage')" class="back-button">
+                        <i class="fas fa-arrow-left"></i> Back to Home
+                    </a>
+                    <h1>Land Conservation Program</h1>
+                    <div class="detail-meta">
+                        <span><i class="fas fa-mountain"></i> Terrestrial Ecosystems</span>
+                        <span><i class="fas fa-globe-americas"></i> 30 Countries</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-padding">
+                <div class="container">
+                    <div class="detail-content">
+                        <div class="detail-header">
+                            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Land Conservation">
+                        </div>
+                        
+                        <p>Healthy lands are essential for clean air, fresh water, food security, and biodiversity. Our Land Conservation Program protects vital habitats through science-based conservation strategies and innovative partnerships.</p>
+                        
+                        <h2>Conservation Strategies</h2>
+                        <p>We employ a range of approaches to protect land, tailored to local contexts and conservation priorities:</p>
+                        
+                        <h3>Protected Areas</h3>
+                        <p>Establishing and effectively managing national parks, wildlife refuges, and other protected areas that conserve critical habitats and species.</p>
+                        
+                        <h3>Conservation Easements</h3>
+                        <p>Working with private landowners to place legally binding restrictions on their property to prevent development while keeping land in private ownership.</p>
+                        
+                        <blockquote>
+                            "Conservation easements have protected over 2 million acres of vital habitat in the United States alone, creating wildlife corridors and preserving agricultural lands."
+                        </blockquote>
+                        
+                        <h3>Indigenous Land Management</h3>
+                        <p>Supporting indigenous communities in securing land rights and implementing traditional conservation practices that have proven effective for centuries.</p>
+                        
+                        <div class="detail-gallery">
+                            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Protected area">
+                            <img src="https://images.unsplash.com/photo-1509310202330-aec5af356d6d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Conservation easement">
+                        </div>
+                        
+                        <h2>Focus Ecosystems</h2>
+                        <ul>
+                            <li><strong>Grasslands:</strong> Protecting North America's prairies and Africa's savannas</li>
+                            <li><strong>Forests:</strong> Conserving tropical rainforests and temperate woodlands</li>
+                            <li><strong>Deserts:</strong> Preserving arid ecosystems and their unique biodiversity</li>
+                            <li><strong>Wetlands:</strong> Safeguarding marshes, bogs, and floodplains</li>
+                        </ul>
+                        
+                        <h2>Program Impact</h2>
+                        <p>Since 1951, our land conservation efforts have:</p>
+                        <ul>
+                            <li>Protected over 125 million acres worldwide</li>
+                            <li>Established 1,500+ protected areas</li>
+                            <li>Supported 200+ indigenous land management initiatives</li>
+                            <li>Secured conservation easements on 5 million acres</li>
+                        </ul>
+                        
+                        <p>Through science, collaboration, and innovation, we're ensuring that vital lands remain intact for future generations. Healthy lands mean healthy people and a healthy planet.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Water Protection Program Detail -->
+        <div id="waterProgram" class="detail-page">
+            <section class="page-header">
+                <div class="container">
+                    <a href="#" onclick="showPage('homePage')" class="back-button">
+                        <i class="fas fa-arrow-left"></i> Back to Home
+                    </a>
+                    <h1>Water Protection Program</h1>
+                    <div class="detail-meta">
+                        <span><i class="fas fa-tint"></i> Freshwater Conservation</span>
+                        <span><i class="fas fa-globe-americas"></i> 40 Major Watersheds</span>
+                    </div>
+            </section>
+
+            <section class="section-padding">
+                <div class="container">
+                    <div class="detail-content">
+                        <div class="detail-header">
+                            <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Water Protection">
+                        </div>
+                        
+                        <p>Freshwater ecosystems cover less than 1% of Earth's surface but support 10% of all known species and provide essential resources for human communities. Our Water Protection Program works to safeguard these vital resources through science-based conservation strategies.</p>
+                        
+                        <h2>Integrated Watershed Management</h2>
+                        <p>We take a holistic approach to water conservation, recognizing that rivers, lakes, wetlands, and groundwater are interconnected systems. Our strategies include:</p>
+                        
+                        <h3>Protecting Headwaters</h3>
+                        <p>Conserving forests and wetlands in upstream areas that naturally filter water and regulate flow. Healthy headwaters are critical for clean water downstream.</p>
+                        
+                        <h3>Restoring Rivers</h3>
+                        <p>Removing obsolete dams, reconnecting floodplains, and restoring natural river flows to revive aquatic ecosystems and improve water quality.</p>
+                        
+                        <blockquote>
+                            "In the Colorado River Basin, our water-sharing agreements have restored flows while meeting human needs—a model for water-stressed regions worldwide."
+                        </blockquote>
+                        
+                        <div class="detail-gallery">
+                            <img src="https://images.unsplash.com/photo-1509310202330-aec5af356d6d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="River restoration">
+                            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Watershed protection">
+                        </div>
+                        
+                        <h2>Sustainable Water Use</h2>
+                        <p>We work with farmers, industries, and cities to implement water-saving technologies and practices:</p>
+                        <ul>
+                            <li>Precision irrigation systems that reduce agricultural water use by 30-50%</li>
+                            <li>Industrial water recycling programs</li>
+                            <li>Urban conservation initiatives including green infrastructure</li>
+                            <li>Water markets that create economic incentives for conservation</li>
+                        </ul>
+                        
+                        <h2>Program Impact</h2>
+                        <p>Our water protection efforts have:</p>
+                        <ul>
+                            <li>Protected 10,000 miles of rivers</li>
+                            <li>Restored 500,000 acres of wetlands</li>
+                            <li>Secured water rights for environmental flows in 25 major rivers</li>
+                            <li>Reduced agricultural water consumption by 1.2 trillion gallons annually</li>
+                            <li>Improved water quality for 50 million people</li>
+                        </ul>
+                        
+                        <p>By working with nature and innovative partners, we're ensuring that freshwater ecosystems continue to sustain both people and wildlife for generations to come.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="mainFooter">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <ul>
+                        <li><a href="#" onclick="showPage('aboutPage')">Our Mission</a></li>
+                        <li><a href="#" onclick="showPage('aboutPage')">Our Team</a></li>
+                        <li><a href="#" onclick="showPage('aboutPage')">Our History</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Financials</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Our Work</h3>
+                    <ul>
+                        <li><a href="#" onclick="showPage('workPage')">Climate Change</a></li>
+                        <li><a href="#" onclick="showPage('workPage')">Land Conservation</a></li>
+                        <li><a href="#" onclick="showPage('workPage')">Water Protection</a></li>
+                        <li><a href="#" onclick="showPage('workPage')">Sustainable Cities</a></li>
+                        <li><a href="#">Projects</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Get Involved</h3>
+                    <ul>
+                        <li><a href="#" onclick="showPage('donatePage')">Donate</a></li>
+                        <li><a href="#" onclick="showPage('getInvolvedPage')">Volunteer</a></li>
+                        <li><a href="#" onclick="showPage('getInvolvedPage')">Membership</a></li>
+                        <li><a href="#" onclick="showPage('getInvolvedPage')">Advocate</a></li>
+                        <li><a href="#">Events</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <address>
+                        The Nature Conservancy<br>
+                        123 Conservation Way<br>
+                        Portland, OR 97204<br>
+                        Phone: (555) 123-4567<br>
+                        Email: info@natureconservancy.org
+                    </address>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <a href="#" onclick="showPage('homePage')">
+                        <img src="logo.png" alt="The Nature Conservancy Logo" class="logo">
+                    </a>
+                </div>
+                <div class="footer-legal">
+                    <ul>
+                        <li><a href="#" onclick="showPage('privacyPage')">Privacy Policy</a></li>
+                        <li><a href="#" onclick="showPage('termsPage')">Terms of Use</a></li>
+                        <li><a href="#" onclick="showPage('cookiePage')">Cookie Policy</a></li>
+                        <li><a href="#" onclick="showPage('accessibilityPage')">Accessibility</a></li>
+                        <li><a href="#" onclick="showPage('sitemapPage')">Site Map</a></li>
+                        <li><a href="#" onclick="showPage('faqPage')">FAQ</a></li>
+                    </ul>
+                    <p class="copyright">© 2025 The Nature Conservancy. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Page navigation functions
+        function showPage(pageId) {
+            // Hide all page containers
+            const pages = document.querySelectorAll('.page-container');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Hide all detail pages
+            const detailContainers = document.querySelectorAll('.detail-page-container');
+            detailContainers.forEach(container => container.classList.remove('active'));
+            
+            // Hide all detail pages
+            const detailPages = document.querySelectorAll('.detail-page');
+            detailPages.forEach(page => page.style.display = 'none');
+            
+            // Show the requested page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Close mobile menu if open
+            document.getElementById('mainNav').style.display = 'none';
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+        
+        function showDetailPage(pageId) {
+            // Hide all page containers
+            const pages = document.querySelectorAll('.page-container');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show the detail page container
+            document.querySelector('.detail-page-container').classList.add('active');
+            
+            // Hide all detail pages
+            const detailPages = document.querySelectorAll('.detail-page');
+            detailPages.forEach(page => page.style.display = 'none');
+            
+            // Show the requested detail page
+            document.getElementById(pageId).style.display = 'block';
+            
+            // Close mobile menu if open
+            document.getElementById('mainNav').style.display = 'none';
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+        
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            const nav = document.getElementById('mainNav');
+            if (nav.style.display === 'block') {
+                nav.style.display = 'none';
+            } else {
+                nav.style.display = 'block';
+            }
+        });
+        
+        // Testimonial slider functionality
+        const testimonialDots = document.querySelectorAll('.testimonial-dot');
+        const testimonials = document.querySelectorAll('.testimonial');
+        
+        testimonialDots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                const slideIndex = this.getAttribute('data-slide');
+                
+                // Remove active class from all testimonials and dots
+                testimonials.forEach(t => t.classList.remove('active'));
+                testimonialDots.forEach(d => d.classList.remove('active'));
+                
+                // Add active class to selected testimonial and dot
+                testimonials[slideIndex].classList.add('active');
+                this.classList.add('active');
+            });
+        });
+        
+        // Auto-rotate testimonials
+        let currentSlide = 0;
+        function rotateTestimonials() {
+            testimonialDots.forEach(d => d.classList.remove('active'));
+            testimonials.forEach(t => t.classList.remove('active'));
+            
+            currentSlide = (currentSlide + 1) % testimonials.length;
+            
+            testimonials[currentSlide].classList.add('active');
+            testimonialDots[currentSlide].classList.add('active');
+        }
+        
+        // Set interval for testimonial rotation
+        setInterval(rotateTestimonials, 5000);
+        
+        // Donation options functionality
+        const donationOptions = document.querySelectorAll('.donation-option');
+        const customAmount = document.getElementById('customAmount');
+        
+        donationOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                // Remove active class from all options
+                donationOptions.forEach(o => o.classList.remove('active'));
+                
+                // Add active class to clicked option
+                this.classList.add('active');
+                
+                // Show/hide custom amount field
+                if (this.textContent === 'Other') {
+                    customAmount.style.display = 'block';
+                } else {
+                    customAmount.style.display = 'none';
+                }
+            });
+        });
+        
+        // Work tabs functionality
+        const workTabs = document.querySelectorAll('.work-tab');
+        const workTabContents = document.querySelectorAll('.work-tab-content');
+        
+        workTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                
+                // Remove active class from all tabs and contents
+                workTabs.forEach(t => t.classList.remove('active'));
+                workTabContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding content
+                this.classList.add('active');
+                document.getElementById(`${tabId}-tab`).classList.add('active');
+            });
+        });
+        
+        // Form submission handling
+        const forms = document.querySelectorAll('form');
+        forms.forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your submission!');
+                this.reset();
+            });
+        });
+    </script>
+</body>
+</html>
